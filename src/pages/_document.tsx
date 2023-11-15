@@ -4,7 +4,9 @@ import React from 'react'
 const Document: any = () => {
   return (
     <Html lang='en'>
-      <Head />
+       <Head>
+        <link rel='icon' href='/logo.svg' />
+      </Head>
       <body>
         <Main />
         <NextScript />
