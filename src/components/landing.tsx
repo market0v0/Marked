@@ -1,13 +1,7 @@
 // Landing.tsx
 import React, { useState } from 'react'
 import Image from 'next/image'
-import {
-  Button,
-  Progress,
-
-  message as antdMessage,
-  Popover
-} from 'antd'
+import { Button, Progress, message as antdMessage, Popover } from 'antd'
 
 import * as handlers from '../handlers'
 import * as utils from '../utils/utils'
@@ -47,36 +41,54 @@ const Landing: React.FC = () => {
       </span>
       <input
         type='text'
-        placeholder={'QUESTION (yes or no)'}
+        placeholder={'QUESTION'}
         className='w-full rounded-md px-2 py-2 text-sm text-black'
         value={question}
-        onChange={(e) => { handlers.onQuestionChange(e, setQuestion, 20) }}
+        onChange={(e) => {
+          handlers.onQuestionChange(e, setQuestion, 20)
+        }}
       />
-      <Progress percent={utils.progress(question, 20)} showInfo={false} status={ 'exception'}/>
+      <Progress
+        percent={utils.progress(question, 20)}
+        showInfo={false}
+        status={'exception'}
+      />
 
       <input
         type='text'
         placeholder={'MESSAGE '}
         className='w-full rounded-md px-2 py-2 text-sm text-black'
         value={message1}
-        onChange={(e) => { handlers.onMessage1Change(e, setMessage1, 10) }}
+        onChange={(e) => {
+          handlers.onMessage1Change(e, setMessage1, 10)
+        }}
       />
-      <Progress percent={utils.progress(message1, 10)} showInfo={false} status={ 'exception'}/>
+      <Progress
+        percent={utils.progress(message1, 10)}
+        showInfo={false}
+        status={'exception'}
+      />
 
       <input
         type='text'
         placeholder={'OUTCOME MESSAGE '}
         className='w-full rounded-md px-2 py-2 text-sm text-black'
         value={message2}
-        onChange={(e) => { handlers.onMessage2Change(e, setMessage2, 30) }}
+        onChange={(e) => {
+          handlers.onMessage2Change(e, setMessage2, 30)
+        }}
       />
-      <Progress percent={utils.progress(message2, 30)} showInfo={false} status={ 'exception'}/>
+      <Progress
+        percent={utils.progress(message2, 30)}
+        showInfo={false}
+        status={'exception'}
+      />
 
       <Popover
         className='bg-[#F9C407] hover:bg-slate-600'
         content={
           <div>
-             <Show question={question} message1={message1} message2={message2} />
+            <Show question={question} message1={message1} message2={message2} />
             <a onClick={hide}>Close</a>
           </div>
         }
