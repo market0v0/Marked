@@ -41,7 +41,7 @@ const Top: React.FC<RepeatedProps> = ({ message }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.3 }}
             exit={{ opacity: 0.2, y: -10 }}
-            className="text-[#ffffff] font-poppins font-bold tracking-[.1rem] text-[4rem] sm:text-[8rem] mx-2 my-2 outline-black break-words"
+            className="text-[#ffffff] font-poppins font-bold tracking-[.1rem] text-[8rem] sm:[8rem] md:text-[8vw] mx-2 my-2 outline-black break-words"
           >
             {message}
           </motion.div>

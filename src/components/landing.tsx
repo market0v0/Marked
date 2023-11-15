@@ -41,11 +41,11 @@ const Landing: React.FC = () => {
       </span>
       <input
         type='text'
-        placeholder={'QUESTION'}
+        placeholder={'GREETING'}
         className='w-full rounded-md px-2 py-2 text-sm text-black'
         value={question}
         onChange={(e) => {
-          handlers.onQuestionChange(e, setQuestion, 20)
+          handlers.onQuestionChange(e, setQuestion, 30)
         }}
       />
       <Progress
@@ -75,7 +75,7 @@ const Landing: React.FC = () => {
         className='w-full rounded-md px-2 py-2 text-sm text-black'
         value={message2}
         onChange={(e) => {
-          handlers.onMessage2Change(e, setMessage2, 30)
+          handlers.onMessage2Change(e, setMessage2, 50)
         }}
       />
       <Progress
