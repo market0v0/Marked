@@ -56,7 +56,7 @@ const Landing: React.FC = () => {
 
       <input
         type='text'
-        placeholder={'MESSAGE '}
+        placeholder={'REPEATED MESSAGE '}
         className='w-full rounded-md px-2 py-2 text-sm text-black'
         value={message1}
         onChange={(e) => {
@@ -71,7 +71,7 @@ const Landing: React.FC = () => {
 
       <input
         type='text'
-        placeholder={'OUTCOME MESSAGE '}
+        placeholder={'MESSAGE '}
         className='w-full rounded-md px-2 py-2 text-sm text-black'
         value={message2}
         onChange={(e) => {
