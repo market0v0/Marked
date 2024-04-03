@@ -21,8 +21,6 @@ const Show: React.FC<ShowProps> = ({ question, message1, message2 }) => {
 
     const url = `${rootUrl}/message?data=${encodeURIComponent(encryptedData)}`
 
-    console.log('URL:', url)
-
     window.open(url, '_blank')
   }
 
