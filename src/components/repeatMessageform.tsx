@@ -31,9 +31,9 @@ const RepeatMessageForm: React.FC = () => {
   }
 
   return (
-    <div className='font-poppins flex min-h-full w-full flex-col items-center justify-center gap-4 rounded-md border-2 border-[#9f9f9f0b] bg-[#9f9f9f10] px-10 py-2 text-white md:w-[30rem]'>
+    <div className='font-poppins flex h-[35rem] w-full flex-col items-center justify-center gap-4 rounded-md  md:bg-[#9f9f9f10] px-10 py-2 text-white md:w-[30rem]'>
       <div className='relative h-20 w-[20rem]'>
-        <Image src={'/logo.svg'} fill alt='marked' />
+        <Image src={'/logo.svg'} fill alt='marked' className='cursor-pointer' onClick={() => { window.location.href = '/' }}/>
       </div>
       <span className='text-center text-sm'>
         Personalize your messages, create shareable links, and make every
@@ -63,6 +63,7 @@ const RepeatMessageForm: React.FC = () => {
           handlers.onMessage1Change(e, setMessage1, 10)
         }}
       />
+
       <Progress
         percent={utils.progress(message1, 10)}
         showInfo={false}
@@ -78,8 +79,9 @@ const RepeatMessageForm: React.FC = () => {
           handlers.onMessage2Change(e, setMessage2, 50)
         }}
       />
+      
       <Progress
-        percent={utils.progress(message2, 30)}
+        percent={utils.progress(message2, 50)}
         showInfo={false}
         status={'exception'}
       />

@@ -19,3 +19,15 @@ export function ensureQuestionMark (str: string): string {
     return stringWithUppercase + '?'
   }
 }
+
+import CryptoJS from 'crypto-js'
+
+
+export const encryptData = (message1: string, message2: string, message3: string): string => {
+  const encryptedData = CryptoJS.AES.encrypt(
+    JSON.stringify({ message1, message2, message3 }),
+    'secret-key'
+  ).toString()
+
+  return encodeURIComponent(encryptedData)
+}

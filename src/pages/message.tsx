@@ -4,6 +4,7 @@ import CryptoJS from 'crypto-js'
 import { motion, AnimatePresence } from 'framer-motion'
 import Question from '@/components/question'
 import Top from '@/components/Top'
+import ParticleRing from '@/components/particle/particle'
 
 const CreatedMessage: React.FC = () => {
   const router = useRouter()
@@ -41,18 +42,21 @@ const CreatedMessage: React.FC = () => {
   }: { question: string, message1: string, message2: string, value: number } = JSON.parse(decryptedData)
 
   return (
-    <div className='font-poppins flex min-h-[100vh] items-center justify-center bg-[#000B28] relative'>
-      <motion.div className='z-0 absolute inset-0' style={{ opacity: topOpacity }}>
-        <Top message={message1} />
-      </motion.div>
-      <AnimatePresence>
-        {showQuestion && (
-          <motion.div className='z-10 w-[]' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <Question question={question} message={message2} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <ParticleRing active={false}>
+      <div className='absolute inset-0 m-0 flex min-h-screen flex-col items-center justify-center '>
+
+        <motion.div className='z-0 absolute inset-0' style={{ opacity: topOpacity }}>
+          <Top message={message1} />
+        </motion.div>
+        <AnimatePresence>
+          {showQuestion && (
+            <motion.div className='z-10 w-[]' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <Question question={question} message={message2} />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </ParticleRing>
   )
 }
 

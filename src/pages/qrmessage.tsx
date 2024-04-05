@@ -1,7 +1,12 @@
 import LongMessageForm from '@/components/longMessageForm'
+import ParticleRing from '@/components/particle/particle'
 import React from 'react'
 
 const LongMessage: React.FC = () => {
-  return <div className='font-poppins px-2 flex min-h-[100vh] items-center justify-center bg-[#000B28]'><LongMessageForm/></div>
+  return (
+    <ParticleRing active={false}>
+      <div className='absolute inset-0 m-0 flex min-h-screen flex-col items-center justify-center '><LongMessageForm /></div>
+    </ParticleRing>
+    )
 }
 export default LongMessage

@@ -11,8 +11,8 @@ interface ShowProps {
 }
 
 const Show: React.FC<ShowProps> = ({ question, message1, message2 }) => {
-  const rootUrl = window.location.origin // Get the root URL
-
+  const rootUrl = window.location.origin 
+  
   const handleButtonClick = (): void => {
     const encryptedData = CryptoJS.AES.encrypt(
       JSON.stringify({ question, message1, message2 }),
