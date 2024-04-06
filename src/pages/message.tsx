@@ -50,7 +50,7 @@ const CreatedMessage: React.FC = () => {
         </motion.div>
         <AnimatePresence>
           {showQuestion && (
-            <motion.div className='z-10 w-[]' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div className='z-10 ' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
               <Question question={question} message={message2} />
             </motion.div>
           )}

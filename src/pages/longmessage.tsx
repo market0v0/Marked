@@ -31,8 +31,8 @@ const CreatedMessage: React.FC = () => {
 
   return (
     <ParticleRing active={false}>
-      <div className='absolute inset-0 z-10 m-0 flex min-h-screen flex-col items-center justify-center '>
-        <div className=' font-poppins  flex w-[30rem] items-center justify-center  '>
+      <div className='absolute inset-0 m-0 flex min-h-screen flex-col items-center justify-center '>
+        <div className=' font-poppins  flex items-center justify-center  '>
           <div className=' font-poppins flex  min-h-full w-full flex-col items-center justify-center gap-4 rounded-md border-2 border-[#9f9f9f0b] bg-[#9f9f9f10] px-4 py-4  text-white md:w-[30rem]'>
             <div className='relative h-20 w-[20rem]'>
               <Image src={'/logo.svg'} fill alt='marked' />
