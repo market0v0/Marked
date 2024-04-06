@@ -1,5 +1,5 @@
 // handlers.ts
-import {  message as antdMessage } from 'antd'
+import { message as antdMessage } from 'antd'
 export const onQuestionChange = (
   e: React.ChangeEvent<HTMLInputElement>,
   setQuestion: React.Dispatch<React.SetStateAction<string>>,
@@ -7,12 +7,9 @@ export const onQuestionChange = (
 ): void => {
   const value = e.target.value
   if (value.length <= MAX_QUESTION_LENGTH) {
-   
     setQuestion(value)
-  }
-  else{
+  } else {
     void antdMessage.error('Max out Characters')
-    return
   }
 }
 
@@ -24,14 +21,10 @@ export const onMessage1Change = (
   const value = e.target.value
   if (value.length <= MAX_MESSAGE_LENGTH) {
     setMessage1(value)
-  }
-  else{
+  } else {
     void antdMessage.error('Max out Characters')
-    return
   }
 }
-
-
 
 export const onMessage2Change = (
   e: React.ChangeEvent<HTMLInputElement>,
@@ -40,16 +33,11 @@ export const onMessage2Change = (
 ): void => {
   const value = e.target.value
   if (value.length <= MAX_MESSAGE_LENGTH) {
-  
     setMessage2(value)
-  }
-  else{
+  } else {
     void antdMessage.error('Max out Characters')
-    return
   }
-  
 }
-
 
 export const onSenderChange = (
   e: React.ChangeEvent<HTMLInputElement>,
@@ -59,10 +47,8 @@ export const onSenderChange = (
   const value = e.target.value
   if (value.length <= MAX_MESSAGE_LENGTH) {
     setSender(value)
-  }
-  else{
+  } else {
     void antdMessage.error('Max out Characters')
-    return
   }
 }
 
@@ -74,26 +60,20 @@ export const onRecipientChange = (
   const value = e.target.value
   if (value.length <= MAX_MESSAGE_LENGTH) {
     setReciptient(value)
-  }
-  else{
+  } else {
     void antdMessage.error('Max out Characters')
-    return
   }
 }
 
-export function onLongMessageChange(
+export function onLongMessageChange (
   e: any,
   setLongMessage: React.Dispatch<React.SetStateAction<string>>,
   MAX_MESSAGE_LENGTH: number
-){
+): void {
   const value = e
   if (value.length <= MAX_MESSAGE_LENGTH) {
     setLongMessage(value)
-  }
-  else{
+  } else {
     void antdMessage.error('Max out Characters')
-    return
   }
 }
-
-

@@ -11,10 +11,9 @@ interface ParticleRingProps {
 }
 
 const ParticleRing: React.FC<ParticleRingProps> = ({ children, active }) => {
-
   // Define your left and right colors here
-  const leftColor ='000917' // Example color value, replace with your desired color
-  const rightColor =  '000917' // Example color value, replace with your desired color
+  const leftColor = '000917' // Example color value, replace with your desired color
+  const rightColor = '000917' // Example color value, replace with your desired color
 
   return (
     <div className='relative ' style={{ height: '100vh', width: '100%' }}>
@@ -23,9 +22,11 @@ const ParticleRing: React.FC<ParticleRingProps> = ({ children, active }) => {
           position: [-2, -12.5, -1.8]
         }}
         style={{ height: '100vh' }}
-        className={active ? '' :'bg-[#000917]' }
+        className={active ? '' : 'bg-[#000917]'}
       >
-        {active ? (<OrbitControls enableZoom={true} maxDistance={90} minDistance={10} />) : (null)}
+        {active ? (
+          <OrbitControls enableZoom={true} maxDistance={90} minDistance={10} />
+        ) : null}
         <directionalLight />
         <PointCircle leftColor={leftColor} rightColor={rightColor} />
       </Canvas>
@@ -35,7 +36,10 @@ const ParticleRing: React.FC<ParticleRingProps> = ({ children, active }) => {
   )
 }
 
-const PointCircle: React.FC<{ leftColor: string, rightColor: string }> = ({ leftColor, rightColor }) => {
+const PointCircle: React.FC<{ leftColor: string, rightColor: string }> = ({
+  leftColor,
+  rightColor
+}) => {
   const ref = useRef<Group | null>(null)
 
   useFrame(({ clock }) => {
